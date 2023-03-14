@@ -24,16 +24,10 @@ const Events = () => {
     let now = Date.now()
     console.log('items: ', items)
 
-    let upcoming = items.filter(item => {
-      let date = Date.parse(item.fields.eventDate['en-Us'])
-      console.log('date: ', date)
-      return date > now
-    })
-
-    console.log('upcoming: ', upcoming)
+    let upcoming = items.filter(item => Date.parse(item.fields.eventDate['en-US']) > now)
     let sorted = upcoming.sort((a, b) => {
       let a_d = Date.parse(a.fields.eventDate['en-US'])
-      let b_d = Date.parse(b.fields.eventDate['en-Us'])
+      let b_d = Date.parse(b.fields.eventDate['en-US'])
       return a_d > b_d ? 1 : -1
     })
     return sorted.slice(0, 3)
