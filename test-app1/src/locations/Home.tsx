@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { useCMA, useSDK } from "@contentful/react-apps-toolkit";
 import { useAsync } from "react-async-hook";
-import { Flex, Text } from "@contentful/f36-components";
+import { Flex, Text, Grid, GridItem, Heading } from "@contentful/f36-components";
 import tokens from "@contentful/f36-tokens";
 import Stats from "../components/stats/Stats";
 import Members from "../components/members/Members";
@@ -42,14 +42,19 @@ export const Home = () => {
           )}
         </Flex>
       </Flex>
-      <Flex
-        style={{ width: "900px" }}
-        flexDirection="column"
-        marginTop="spacing3Xl"
+      <Grid style={{width: '100%'}}
+      columns='1fr 1fr'
+      columnGap='spacingM'
+      rowGap='spacingM'
       >
-        <Stats />
-        <Members />
-      </Flex>
+        <GridItem style={{backgroundColor: 'red'}}>
+          elements
+        </GridItem>
+        <GridItem style={{backgroundColor: 'red'}}>
+          hall of fame
+        </GridItem>
+
+      </Grid>
     </Flex>
   );
 };
