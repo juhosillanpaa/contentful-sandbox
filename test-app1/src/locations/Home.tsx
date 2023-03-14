@@ -3,8 +3,7 @@ import { useCMA, useSDK } from "@contentful/react-apps-toolkit";
 import { useAsync } from "react-async-hook";
 import { Flex, Text, Grid, GridItem, Heading } from "@contentful/f36-components";
 import tokens from "@contentful/f36-tokens";
-import Stats from "../components/stats/Stats";
-import Members from "../components/members/Members";
+import Events from '../components/events/Events'
 
 export const Home = () => {
   const sdk = useSDK();
@@ -42,13 +41,14 @@ export const Home = () => {
           )}
         </Flex>
       </Flex>
-      <Grid style={{width: '100%'}}
+      <Grid style={{width: '100%', height: '100%'}}
       columns='1fr 1fr'
+      rows='1fr'
       columnGap='spacingM'
       rowGap='spacingM'
       >
-        <GridItem style={{backgroundColor: 'red'}}>
-          elements
+        <GridItem style={{ height: '100%'}}>
+          <Events />
         </GridItem>
         <GridItem style={{backgroundColor: 'red'}}>
           hall of fame
